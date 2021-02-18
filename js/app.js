@@ -38,9 +38,9 @@ function showNotes() {
     html = html + `<div class="card my-3 mx-3 noteCard" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Note ${index + 1}</h5>
-      <p class="card-text">${element}</p>
+      <p class="card-text" contenteditable = "true">${element}</p>
       <p id = "date">${date.toDateString()}</p>
-      <button id="${index}" onclick = "deleteNote(this.id)"class="btn btn-primary">Delete Note</a>
+      <button id="${index}" onclick = "deleteNote(this.id)"class="btn btn-primary">Delete Note</button>
     </div>
   </div>`
   });
@@ -51,9 +51,8 @@ function showNotes() {
   } else {
     notesElem.innerHTML = `No notes to be shown. Add a note above`;
   }
-
-
 }
+
 function deleteNote(index) {
   // console.log(`Deleting the note ${index}`);
   let notes = localStorage.getItem("notes");
